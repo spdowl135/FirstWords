@@ -21,15 +21,59 @@
 document.addEventListener('deviceready', this.onDeviceReady, false);	
 function onDeviceReady() {
 //app.receivedEvent('deviceready');
+var newURL = window.location.href;
+var pathArray = window.location.href.split( '=' );
+var thirdLevel = pathArray[2];
+//document.getElementById("url1").innerHTML = newURL;
+//document.getElementById("result2").innerHTML = thirdLevel;
 
-//document.getElementById("result").innerHTML = "Hello There";
+var secondLevel = pathArray[1];
+var newarray = secondLevel.split('&',1);
+//document.getElementById("result").innerHTML = newarray;
+
 var sw = screen.width;
-var picurl = "http://www.workjar.com/firstwords/app/getpic.php?width=" + sw;
+var picurl = "http://www.workjar.com/firstwords/app/getpic.php?cat=" + newarray + "&catword=" + thirdLevel + "&width=" + sw;
 $('#photo').load(picurl);
-var photourl = "http://www.workjar.com/firstwords/app/getwords.php";
-$('#cat1').click(function() {
+var photourl = "http://www.workjar.com/firstwords/app/getwords.php?cat=" + newarray + "&catword=" + thirdLevel;
+$('#clickit').click(function() {
 	//alert('Button clicked');
-window.location = "easywords.html?cat=Things&catword=1";
+$.ajax({
+	type: 'GET',
+	//data: formData,
+	//dataType: 'json',
+	url: photourl,
+	success: function(data) {
+	$('#hidethis').hide();
+	$("#results").html(data);	
+  },
+  error: function() {
+    //this will trigger in case the server send invalid JSON (or other types of errors)
+    alert('Error');
+  }
+    });
+	return false;
+});
+
+$('#btnnxt').click(function() {
+	if (+thirdLevel === 10) {
+		location.reload();
+	}
+	else
+	{
+	var numericid = +thirdLevel + 1;
+	window.location = "easywords.html?cat=" + newarray + "&catword=" + numericid;
+	}
+});
+
+$('#btnprv').click(function() {
+	if (+thirdLevel === 1) {
+		location.reload();
+	}
+	else
+	{
+	var numericid = +thirdLevel - 1;
+	window.location = "easywords.html?cat=" + newarray + "&catword=" + numericid;
+	}
 });
 /*
 var items = window.localStorage.getItem('user_name');
@@ -66,20 +110,33 @@ else
 	</div>
         <div data-role="content">
         <br /><br /><br /><br />
-
+        <!--
+           <p><div id = "url1"></div></p>
+            <p><div id = "result"></div></p>
+             <p><div id = "result2"></div></p>
+          -->
+            <p><div id = "photo"></div></p>
+            <!--
+            <div id="deviceready" class="blink">
+    <p class="event listening">Connecting to Device</p>
+    <p class="event received">Device is Ready</p>
+</div>
+-->
+<br />
+<div id = "hidethis">
 <!--<input id="clickit" name="clickit" value="Click Here" type="button" />-->
-<!--<input type = "button" id = "cat1" name = "cat1" value = "Things" />-->
-<ul data-role="listview" data-inset="true">
-	<li><a href="#" id = "cat1" name = "cat1">Things</a></li>
-	<li><a href="#" id = "cat1" name = "cat1">Food</a></li>
-	<li><a href="#" id = "cat1" name = "cat1">Numbers</a></li>
-</ul>
+<a href="#" id = "clickit" name= "clickit" data-role="button" data-icon="gear" data-shadow="false" data-theme="b">Show Word</a>
+</div>
+<br />
+<div id = "results">
+	
+</div>
 <br /><br />
 <div data-role="navbar" data-iconpos = "bottom" >
 	<ul>
-		<li><a href="#" id="btnprv" name="btnprv" data-icon="grid">Previous</a></li>
+		<li><a href="#" id="btnprv" name="btnprv" data-icon="arrow-l">Previous</a></li>
 		<li><a href="#"data-icon="check" onclick="location.reload();">Refresh</a></li>
-		<li><a href="#" id="btnnxt" name="btnnxt" data-icon="grid">Next</a></li>
+		<li><a href="#" id="btnnxt" name="btnnxt" data-icon="arrow-r">Next</a></li>
 	</ul>
 </div>       
 </div>
