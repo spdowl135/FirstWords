@@ -31,6 +31,12 @@ $('#cat1').click(function() {
 	//alert('Button clicked');
 window.location = "easywords.html?cat=Things&catword=1";
 });
+$('#cat2').click(function() {
+window.location = "easywords.html?cat=FOOD&catword=1";
+});
+$('#cat3').click(function() {
+window.location = "easywords.html?cat=NUMBERS&catword=1";
+});
 /*
 var items = window.localStorage.getItem('user_name');
 if (items === null || items.length === 0)
@@ -71,8 +77,8 @@ else
 <!--<input type = "button" id = "cat1" name = "cat1" value = "Things" />-->
 <ul data-role="listview" data-inset="true">
 	<li><a href="#" id = "cat1" name = "cat1">Things</a></li>
-	<li><a href="#" id = "cat1" name = "cat1">Food</a></li>
-	<li><a href="#" id = "cat1" name = "cat1">Numbers</a></li>
+	<li><a href="#" id = "cat2" name = "cat2">Food</a></li>
+	<li><a href="#" id = "cat3" name = "cat3">Numbers</a></li>
 </ul>
 <br /><br />
 <div data-role="navbar" data-iconpos = "bottom" >
