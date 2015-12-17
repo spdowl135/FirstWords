@@ -5,7 +5,7 @@
         <meta name="format-detection" content="telephone=no" />
         <meta name="msapplication-tap-highlight" content="no" />
         <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
-        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, target-densitydpi=medium-dpi, user-scalable=0" />
         <title>Hello World</title>
                 <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
                 <link rel="stylesheet" type="text/css" href="css/jqmobile.css" />
@@ -36,6 +36,15 @@ window.location = "easywords.html?cat=FOOD&catword=1";
 });
 $('#cat3').click(function() {
 window.location = "easywords.html?cat=NUMBERS&catword=1";
+});
+$('#cat4').click(function() {
+window.location = "easywords.html?cat=PLACES&catword=1";
+});
+$('#cat5').click(function() {
+window.location = "easywords.html?cat=PEOPLE&catword=1";
+});
+$('#cat6').click(function() {
+window.location = "easywords.html?cat=ANIMALS&catword=1";
 });
 /*
 var items = window.localStorage.getItem('user_name');
@@ -79,6 +88,9 @@ else
 	<li><a href="#" id = "cat1" name = "cat1">Things</a></li>
 	<li><a href="#" id = "cat2" name = "cat2">Food</a></li>
 	<li><a href="#" id = "cat3" name = "cat3">Numbers</a></li>
+	<li><a href="#" id = "cat4" name = "cat4">Places</a></li>
+	<li><a href="#" id = "cat5" name = "cat5">People</a></li>
+	<li><a href="#" id = "cat6" name = "cat6">Animals</a></li>
 </ul>
 <br /><br />
 <div data-role="navbar" data-iconpos = "bottom" >
