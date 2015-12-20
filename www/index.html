@@ -26,8 +26,8 @@ function onDeviceReady() {
 var sw = screen.width;
 var viewportwidth = window.innerWidth;
 var viewportheight = window.innerHeight;
-//document.getElementById("width").innerHTML = viewportwidth;
-//document.getElementById("height").innerHTML = viewportheight;
+document.getElementById("width").innerHTML = viewportwidth;
+document.getElementById("height").innerHTML = viewportheight;
 var picurl = "http://www.workjar.com/firstwords/app/getpic.php?width=" + viewportwidth;
 $('#photo').load(picurl);
 var photourl = "http://www.workjar.com/firstwords/app/getwords.php";
