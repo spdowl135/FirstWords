@@ -32,7 +32,9 @@ var newarray = secondLevel.split('&',1);
 //document.getElementById("result").innerHTML = newarray;
 
 var sw = screen.width;
-var picurl = "http://www.workjar.com/firstwords/app/getpic.php?cat=" + newarray + "&catword=" + thirdLevel + "&width=" + sw;
+var viewportwidth = window.innerWidth;
+var viewportheight = window.innerHeight;
+var picurl = "http://www.workjar.com/firstwords/app/getpic.php?cat=" + newarray + "&catword=" + thirdLevel + "&thewidth=" + viewportwidth;
 $('#photo').load(picurl);
 var photourl = "http://www.workjar.com/firstwords/app/getwords.php?cat=" + newarray + "&catword=" + thirdLevel;
 $('#clickit').click(function() {
@@ -141,7 +143,7 @@ else
 </div>       
 </div>
 <div data-role="footer" data-position="fixed" data-fullscreen="true" data-theme="b">
-		<a href="index.html" data-icon="delete" data-iconpos="left" data-theme="b">Home</a>
+		<a onclick="window.location='index.html'" data-icon="delete" data-iconpos="left" data-theme="b">Home</a>
 	<a data-icon="check" data-iconpos="right" data-theme="b" onclick="location.reload();">Refresh</a>
 	</div>
 	</div>

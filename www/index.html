@@ -27,13 +27,14 @@ var sw = screen.width;
 var viewportwidth = window.innerWidth;
 var viewportheight = window.innerHeight;
 document.getElementById("width").innerHTML = viewportwidth;
-document.getElementById("height").innerHTML = viewportheight;
-var picurl = "http://www.workjar.com/firstwords/app/getpic.php?width=" + viewportwidth;
+//document.getElementById("height").innerHTML = viewportheight;
+var picurl = "http://www.workjar.com/firstwords/app/getpic.php?thewidth=" + viewportwidth;
+document.getElementById("height").innerHTML = picurl;
 $('#photo').load(picurl);
 var photourl = "http://www.workjar.com/firstwords/app/getwords.php";
 $('#cat1').click(function() {
 	//alert('Button clicked');
-window.location = "easywords.html?cat=Things&catword=1";
+window.location = "easywords.html?cat=THINGS&catword=1";
 });
 $('#cat2').click(function() {
 window.location = "easywords.html?cat=FOOD&catword=1";
@@ -111,7 +112,7 @@ else
 </div>       
 </div>
 <div data-role="footer" data-position="fixed" data-fullscreen="true" data-theme="b">
-		<a href="index.html" data-icon="delete" data-iconpos="left" data-theme="b">Home</a>
+		<a onclick="window.location='index.html'" data-icon="delete" data-iconpos="left" data-theme="b">Home</a>
 	<a data-icon="check" data-iconpos="right" data-theme="b" onclick="location.reload();">Refresh</a>
 	</div>
 	</div>
