@@ -51,6 +51,9 @@ window.location = "easywords.html?cat=PEOPLE&catword=1";
 $('#cat6').click(function() {
 window.location = "easywords.html?cat=ANIMALS&catword=1";
 });
+$('#cat7').click(function() {
+window.location = "easywords.html?cat=DISNEY&catword=1";
+});
 /*
 var items = window.localStorage.getItem('user_name');
 if (items === null || items.length === 0)
@@ -96,15 +99,9 @@ else
 	<li><a href="#" id = "cat4" name = "cat4">Places</a></li>
 	<li><a href="#" id = "cat5" name = "cat5">People</a></li>
 	<li><a href="#" id = "cat6" name = "cat6">Animals</a></li>
+	<li><a href="#" id = "cat7" name = "cat7">Disney</a></li>
 </ul>
-<br /><br />
-<div data-role="navbar" data-iconpos = "bottom" >
-	<ul>
-		<li><a href="#" id="btnprv" name="btnprv" data-icon="grid">Previous</a></li>
-		<li><a href="#"data-icon="check" onclick="location.reload();">Refresh</a></li>
-		<li><a href="#" id="btnnxt" name="btnnxt" data-icon="grid">Next</a></li>
-	</ul>
-</div>       
+<br /><br />      
 </div>
 <div data-role="footer" data-position="fixed" data-fullscreen="true" data-theme="b">
 		<a onclick="window.location='index.html'" data-icon="delete" data-iconpos="left" data-theme="b">Home</a>
